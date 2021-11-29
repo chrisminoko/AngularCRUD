@@ -1,0 +1,33 @@
+<h5>{{title}}</h5>  
+<h3>Sports</h3>  
+<hr/>  
+  
+<form [formGroup]="groupmeetingForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>  
+  
+    <div class="form-group row">  
+        <label class=" control-label col-md-12">Sport Name</label>  
+        <div class="col-md-4">  
+            <input class="form-control" type="text" formControlName="name">  
+        </div>  
+        <span class="text-danger" *ngIf="name.invalid && formDir.submitted">  
+           Sport Name is required.  
+        </span>  
+    </div>  
+    <div class="form-group row">  
+        <label class=" control-label col-md-12">Logo Url</label>  
+        <div class="col-md-4">  
+            <input class="form-control" type="text" formControlName="imageUrl">  
+        </div>  
+        <span class="text-danger" *ngIf="imageUrl.invalid && formDir.submitted">  
+            Logo Url is required.  
+        </span>  
+    </div>  
+
+    <div class="form-group">  
+        <button type="submit" class="btn btn-default">Save</button>  
+        <button class="btn" (click)="cancel()">Cancel</button>  
+    </div>  
+</form>   
+
+
+

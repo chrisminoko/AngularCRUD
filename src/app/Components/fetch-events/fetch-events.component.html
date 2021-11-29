@@ -1,0 +1,33 @@
+
+<p *ngIf="!events"><em>Loading...</em></p>  
+  
+
+<table class='table table-striped' *ngIf="events">  
+    <thead>  
+        <tr>  
+            <th>Id</th>  
+            <th>Tournament ID</th>  
+            <th>Event Name</th>  
+            <th>Date</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr *ngFor="let gmt of events">  
+            <td>{{ gmt.eventId }}</td>  
+            <td>{{ gmt.tournamentID }}</td>  
+            <td>{{ gmt.eventName }}</td>  
+            <td>{{ gmt.eventDate }}</td>  
+            <td>  
+            <td>  
+                <!-- <button [routerLink]="['/tournament/edit/', gmt.eventId]" class="btn btn btn-success">Edit</button> |
+                <button [routerLink]="" (click)="delete(gmt.eventId)" class="btn btn btn-danger">Delete</button> -->
+            </td>  
+        </tr>  
+    </tbody>  
+</table> 
+
+<!-- <p>  
+    <button [routerLink]="['/Add-Tournament']" class="btn btn btn-outline-primary"> Create New</button>
+</p>
+ -->
+

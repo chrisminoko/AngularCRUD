@@ -1,0 +1,28 @@
+
+<p *ngIf="!bettype"><em>Loading...</em></p>  
+  
+
+<table class='table table-striped' *ngIf="bettype">  
+    <thead>  
+        <tr>  
+            <th>Id</th>  
+            <th>Bet Type</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr *ngFor="let gmt of bettype">  
+            <td>{{ gmt.betypeid }}</td>  
+            <td>{{ gmt.bettype }}</td>  
+            <td>  
+            <td>  
+                    <button [routerLink]="['/bettype/edit/', gmt.betypeid]" class="btn btn btn-success">Edit</button> |
+                <button [routerLink]="" (click)="delete(gmt.betypeid)" class="btn btn btn-danger">Delete</button>
+            </td>  
+        </tr>  
+    </tbody>  
+</table> 
+
+<p>  
+    <button [routerLink]="['/Add-bettypes']" class="btn btn btn-outline-primary"> Create New</button>
+</p>
+

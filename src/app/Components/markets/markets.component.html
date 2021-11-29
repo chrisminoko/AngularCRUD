@@ -1,0 +1,28 @@
+
+<p *ngIf="!markets"><em>Loading...</em></p>  
+  
+
+<table class='table table-striped' *ngIf="markets">  
+    <thead>  
+        <tr>  
+            <th>Id</th>  
+            <th>Bet Type</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr *ngFor="let gmt of markets">  
+            <td>{{ gmt.marketId }}</td>  
+            <td>{{ gmt.markeType }}</td>  
+            <td>  
+            <td>  
+                <!-- <button [routerLink]="['/markets/edit/', gmt.marketId]" class="btn btn btn-success">Edit</button> |
+                <button [routerLink]="" (click)="delete(gmt.marketId)" class="btn btn btn-danger">Delete</button> -->
+            </td>  
+        </tr>  
+    </tbody>  
+</table> 
+
+<!-- <p>  
+    <button [routerLink]="['/Add-Market']" class="btn btn btn-outline-primary"> Create New</button>
+</p> -->
+

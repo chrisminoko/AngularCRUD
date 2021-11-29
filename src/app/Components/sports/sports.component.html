@@ -1,0 +1,35 @@
+
+<p *ngIf="!sports"><em>Loading...</em></p>  
+  
+
+<table class='table table-striped' *ngIf="sports">  
+    <thead>  
+        <tr>  
+            <th>Id</th>  
+            <th>Name</th>  
+            <th>Symbol</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr *ngFor="let gmt of sports">  
+            <td>{{ gmt.sportId }}</td>  
+            <td>{{ gmt.name }}</td>  
+            <td><img  style="background-color: #643e94"  src="{{gmt.imageurl}}" width="50" height="50" alt=""></td>  
+            <td>  
+            <td>  
+                <button [routerLink]="['/sport/edit/', gmt.sportId]" class="btn btn btn-success">Edit</button> |
+                <button [routerLink]="" (click)="delete(gmt.sportId)" class="btn btn btn-danger">Delete</button>
+            </td>  
+        </tr>  
+    </tbody>  
+</table> 
+
+<p>  
+    <a [routerLink]="['/Add-Sport']">Create New</a>  
+</p>
+
+
+
+  
+
+  

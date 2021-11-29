@@ -1,0 +1,33 @@
+
+<p *ngIf="!country"><em>Loading...</em></p>  
+  
+<div class="mt-4">
+
+</div>
+<table class='table table-striped ' *ngIf="country">  
+    <thead>  
+        <tr>  
+            <th>Id</th>  
+            <th>Name</th>  
+            <th>Flag</th>  
+            <th>Actions</th>  
+        </tr>  
+    </thead>  
+    <tbody>  
+        <tr *ngFor="let gmt of country">  
+            <td>{{ gmt.countryid }}</td>  
+            <td>{{ gmt.name }}</td>  
+           
+            <td>  <img src="https://www.countryflags.io/{{gmt.flagurl}}/flat/24.png" alt=""> </td>
+            <td>  
+                    <button [routerLink]="['/countries/edit/', gmt.countryid]" class="btn btn btn-success">Edit</button> |
+                <button [routerLink]="" (click)="delete(gmt.countryid)" class="btn btn btn-danger">Delete</button>
+            </td>  
+        </tr>  
+    </tbody>  
+</table> 
+
+<!-- <p>  
+    <button [routerLink]="['/Add-countries']" class="btn btn btn-outline-primary"> Create New</button>
+</p> -->
+

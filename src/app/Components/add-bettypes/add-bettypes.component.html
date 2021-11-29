@@ -1,0 +1,22 @@
+<h5>{{title}}</h5>  
+<hr/>  
+  
+<form [formGroup]="groupmeetingForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>  
+  
+    <div class="form-group row">  
+        <label class=" control-label col-md-12">Bet Type</label>  
+        <div class="col-md-4">  
+            <input class="form-control" type="text" formControlName="bettype">  
+        </div>  
+        <span class="text-danger" *ngIf="bettype.invalid && formDir.submitted">  
+            Bet Type is required.  
+        </span>  
+    </div>  
+
+    <div class="form-group">  
+        <button type="submit" class="btn btn-primary">Save</button>  ..
+        <button class="btn btn btn-warning" (click)="cancel()">Cancel</button>  
+    </div>  
+</form>   
+
+
